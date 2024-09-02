@@ -1,0 +1,235 @@
+:root {
+    --primary-bg-color: #121212;
+    --secondary-bg-color: #1f1f1f;
+    --primary-text-color: #e0e0e0;
+    --secondary-text-color: #bbbbbb;
+    --accent-color: #bb86fc;
+    --accent-color-dark: #3700b3;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+/* Navbar styles */
+nav {
+    background-color: var(--secondary-bg-color);
+    box-shadow: 0 0 4px #000;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Main navigation layout */
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+/* Company logo */
+.company-logo img {
+    width: 120px;
+}
+
+/* Navigation links list */
+.nav-links ul {
+    list-style-type: none;
+    padding: 0; /* Remove default padding */
+    margin: 0;  /* Remove default margin */
+    display: flex; /* Ensure it is displayed as flex for responsive layout */
+    gap: 16px;
+}
+
+/* Navigation link styles */
+.hover-link {
+    cursor: pointer;
+    color: var(--primary-text-color);
+    transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+    color: var(--accent-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+/* Search bar */
+.search-bar {
+    height: 32px;
+    gap: 8px;
+    display: flex; /* Ensure items are aligned in a row */
+}
+
+/* Search input field */
+.news-input {
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid var(--secondary-text-color);
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-text-color);
+}
+
+/* Search button */
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Main content area */
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+/* Cards container */
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #000;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--secondary-bg-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px var(--accent-color);
+    background-color: var(--primary-bg-color);
+    transform: translateY(-2px);
+}
+
+/* Card header image */
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-header img {
+    transform: scale(1.05);
+}
+
+c
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+    color: var(--secondary-text-color);
+}
+
+
+@media (max-width: 599px) {
+    .nav-links ul {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .search-bar {
+        flex-direction: column; 
+    }
+
+    .news-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        width: 100%; 
+    }
+
+    .cards-container {
+        flex-direction: column; 
+    }
+
+    .card {
+        width: 100%; 
+        max-width: none;
+        margin: auto; 
+    }
+}
+
+
+@media (min-width: 600px) {
+    .nav-links ul {
+        flex-direction: row; 
+    }
+
+    .search-bar {
+        flex-direction: row; 
+    }
+
+    .news-input {
+        width: 200px; 
+    }
+
+    .search-button {
+        width: auto; 
+    }
+
+    .cards-container {
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+
+    .card {
+        width: calc(50% - 10px); 
+    }
+}
+
+
+@media (min-width: 960px) {
+    .container {
+        max-width: 1180px;
+        margin-inline: auto;
+    }
+
+    .card {
+        width: 360px; 
+    }
+}
